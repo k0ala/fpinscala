@@ -180,6 +180,10 @@ object Chap5 extends App {
     */
   Stream(1,2,3).scanRight(0)(_ + _)
   assert(Stream(1,2,3).scanRight(0)(_ + _).toList == List(6,5,3,0))
+  println(Stream(1,2).toList)
+  println(Stream.cons(1, Stream.cons(2, Stream.empty)).toList)
+  val s = Stream.cons(true,sys.error("oops")).scanRightAnswer(0)((a, b) => if (a) 1 else b)
+  //println(s.take(1).toList)
 
 
 }
